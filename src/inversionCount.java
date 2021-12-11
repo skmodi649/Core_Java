@@ -19,5 +19,6 @@ public class inversionCount {
                     inversioncount++;
             }
         }
+        System.out.println("Inversion Count : " + inversioncount);
     }
 }
