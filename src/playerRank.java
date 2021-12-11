@@ -11,7 +11,7 @@ public class playerRank {
 
         // Now we will find the Winner , second winner , loser and the second loser
 
-        int first = -9999, second = -9999, last = 100000, secondlast = 100000;
+        int first = -9999, second = -9999, last = 100000, secondLast = 100000;
         for (int i = 0; i < n; i++) {
             if (arr[i] > first) {
                 second = first;
@@ -20,15 +20,15 @@ public class playerRank {
                 second = arr[i];
             }
             if (arr[i] < last) {
-                secondlast = last;
+                secondLast = last;
                 last = arr[i];
-            } else if (secondlast > arr[i] && arr[i] != last) {
-                secondlast = arr[i];
+            } else if (secondLast > arr[i] && arr[i] != last) {
+                secondLast = arr[i];
             }
         }
         System.out.println("Winner : " + first);
         System.out.println("Second Winner : " + second);
         System.out.println("Last : " + last);
-        System.out.println("Second Last : " + secondlast);
+        System.out.println("Second Last : " + secondLast);
     }
 }
