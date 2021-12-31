@@ -23,7 +23,7 @@ class Tree {
     }
 
     // Now lets find the inorder traversal of the given binary tree
-    void inOrder(Node node) {
+    static void inOrder(Node node) {
         if (node == null)
             return;
 
@@ -33,6 +33,11 @@ class Tree {
         list.add(node.item);
         // traverse the right child
         inOrder(node.right);
+    }
+
+    public void getrandom()
+    {
+
     }
 
 
@@ -46,7 +51,7 @@ class Tree {
         tree.root.left.left = new Node(5);
         tree.root.left.right = new Node(6);
 
-        tree.inOrder(tree.root);
+        tree.getrandom();
 
 
     }
