@@ -1,37 +1,53 @@
+import java.util.ArrayList;
+
 // Using auxillary array to find the random node in a given binary tree
-public class Opengenus_tree_random_node {
-    static class TreeNode {
-        int val;
-        int child;
-        TreeNode left, right;
+class Node {
+    int item;
+    Node left, right;
+
+    public Node(int key) {
+        item = key;
+        left = right = null;
+    }
+}
+
+class Tree {
+
+    // Using a arraylist to store the inorder traversal of the gieven binary tree
+    static ArrayList<Integer> list = new ArrayList<Integer>();
+    // root of Tree
+    Node root;
+
+    Tree() {
+        root = null;
     }
 
-    static TreeNode Node(int data) {
-        TreeNode temp = new TreeNode();
-        temp.val = data;
-        temp.left = temp.right = null;   //No child initially for the Binary tree
-        temp.child = 0;
-        return temp;
+    // Now lets find the inorder traversal of the given binary tree
+    void inOrder(Node node) {
+        if (node == null)
+            return;
+
+        // traverse the left child
+        inOrder(node.left);
+
+        list.add(node.item);
+        // traverse the right child
+        inOrder(node.right);
     }
 
-    static int getChild(TreeNode root) {
-        if (root == null)
-            return 0;
-        return getChild(root.left) +
-                getChild(root.right) + 1;
-    }
 
-    public static void main(String[] asdf) {
-        //Now let's create the binary Tree
+    public static void main(String[] args) {
+        Tree tree = new Tree();
 
-        TreeNode root = Node(1);
-        root.left = Node(2);
-        root.right = Node(3);
-        root.left.right = Node(12);
-        root.left.right = Node(89);
-        root.right.left = Node(68);
-        root.right.right = Node(99);
-        root.right.left = Node(68);
+
+        tree.root = new Node(1);
+        tree.root.left = new Node(12);
+        tree.root.right = new Node(9);
+        tree.root.left.left = new Node(5);
+        tree.root.left.right = new Node(6);
+
+        tree.inOrder(tree.root);
+
 
     }
 }
