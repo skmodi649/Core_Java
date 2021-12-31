@@ -37,6 +37,14 @@ class Tree {
 
     public void getrandom()
     {
+        // getting the count of node of the binary tree
+        int n = list.size();
+        int min = 0;
+        int max = n - 1;
+        //Generate random int value from 0 to n-1
+        int b = (int)(Math.random()*(max-min+1)+min);
+        // displaying the value at the generated index
+        System.out.println("Random Node : " + list.get(b));
 
     }
 
