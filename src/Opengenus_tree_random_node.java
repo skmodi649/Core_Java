@@ -13,7 +13,7 @@ class Node {
 
 class Tree {
 
-    // Using a arraylist to store the inorder traversal of the gieven binary tree
+    // Using a arraylist to store the inorder traversal of the given binary tree
     static ArrayList<Integer> list = new ArrayList<Integer>();
     // root of Tree
     Node root;
@@ -35,8 +35,9 @@ class Tree {
         inOrder(node.right);
     }
 
-    public void getrandom()
+    public void getrandom(Node val)
     {
+        inOrder(val);
         // getting the count of node of the binary tree
         int n = list.size();
         int min = 0;
@@ -44,7 +45,8 @@ class Tree {
         //Generate random int value from 0 to n-1
         int b = (int)(Math.random()*(max-min+1)+min);
         // displaying the value at the generated index
-        System.out.println("Random Node : " + list.get(b));
+        int random = list.get(b);
+        System.out.println("Random Node : " + random);
 
     }
 
@@ -59,7 +61,7 @@ class Tree {
         tree.root.left.left = new Node(5);
         tree.root.left.right = new Node(6);
 
-        tree.getrandom();
+        tree.getrandom(tree.root);
 
 
     }
