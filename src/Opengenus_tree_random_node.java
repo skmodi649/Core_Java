@@ -3,7 +3,7 @@
  */
 
 /* PROBLEM DESCRIPTION :
-  There is a Binary Search Tree given and we are supposed to find a random node in the given binary tree.
+  There is a Binary Search Tree given, and we are supposed to find a random node in the given binary tree.
  */
 
 /* ALGORITHM :
@@ -20,7 +20,7 @@
 
 import java.util.ArrayList;
 
-// Using auxillary array to find the random node in a given binary tree
+// Using auxiliary array to find the random node in a given binary tree
 class Node {
     int item;
     Node left, right;
@@ -33,7 +33,7 @@ class Node {
 
 class Tree {
 
-    // Using a arraylist to store the inorder traversal of the given binary tree
+    // Using an arraylist to store the inorder traversal of the given binary tree
     static ArrayList<Integer> list = new ArrayList<>();
     // root of Tree
     Node root;
