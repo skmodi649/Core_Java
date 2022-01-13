@@ -31,14 +31,14 @@ class Node {
     }
 }
 
-class Tree {
+public class TreeRandomNode {
 
     // Using an arraylist to store the inorder traversal of the given binary tree
     static ArrayList<Integer> list = new ArrayList<>();
     // root of Tree
     Node root;
 
-    Tree() {
+    TreeRandomNode() {
         root = null;
     }
 
@@ -72,7 +72,7 @@ class Tree {
 
 
     public static void main(String[] args) {
-        Tree tree = new Tree();
+        TreeRandomNode tree = new TreeRandomNode();
 
 
         tree.root = new Node(1);
