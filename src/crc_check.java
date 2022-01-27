@@ -1,25 +1,58 @@
 import java.util.Scanner;
 
 public class crc_check {
-    public static void main(String args[]) {
-        Scanner scan = new Scanner(System.in);
-        int size;
-        System.out.println("Enter the size of the data array: ");
-        size = scan.nextInt();
-        int[] input_data = new int[size];
-        System.out.println("Enter data bits in the array one by one: ");
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter bit " + (size - i) + ":");
-            input_data[i] = scan.nextInt();
-        }
-        System.out.println("Enter the size of the divisor array:");
-        size = scan.nextInt();
-        int divisor[] = new int[size];
-        System.out.println("Enter divisor bits in the array one by one: ");
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter bit " + (size - i) + ":");
-            divisor[i] = scan.nextInt();
+    static Scanner scan = new Scanner(System.in);
+
+    public static String sender() {
+        // Step 1 : Receive the data and the divisor
+
+        System.out.println("Enter the data : ");
+        String data = scan.next();
+        System.out.println("Enter the divisor : ");
+        String div = scan.next();
+        int append = div.length() - 1;
+        String new_data = data;
+
+        // Step 2 : Append n - 1 zeros at the end of the data, where n is the length of the divisor string
+
+        while (append > 0) {
+            new_data = new_data + "0";
+            append--;
         }
 
+        /* Step 3 : Let's perform the binary divison, remove the leading zeros from the dividend and the divisor because
+                    they do not affect the divison */
+        // Note : We are considering the input bits to be at most 64bit
+
+        long dividend = Long.parseLong(new_data);
+        long divisor = Long.parseLong(div);
+
+        long quotient = dividend / divisor;
+        long crc_remainder = dividend % divisor;
+
+        // Now append the remainder to the data replacing the zeros
+
+        String crc = String.valueOf(crc_remainder);
+        data = data + crc;
+
+        return data;
+    }
+
+    public void receiver(String data){
+
+        String crc_data = sender();
+        if(data.equals(crc_data))
+            System.out.println("Message received successfully!");
+        else
+            System.out.println("Code error!");
+    }
+    public static void main(String[] args) {
+        System.out.println("Name : Suraj Kumar");
+        System.out.println("Registration Number : 20BCE2835");
+        System.out.println("---------------------------------------------------");
+        crc_check obj = new crc_check();
+        System.out.println("Enter the data to be received :");
+        String data = scan.next();
+        obj.receiver(data);
     }
 }
