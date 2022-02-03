@@ -47,12 +47,22 @@ public class crc_check {
             System.out.println("Code error!");
     }
     public static void main(String[] args) {
-        System.out.println("Name : Suraj Kumar");
-        System.out.println("Registration Number : 20BCE2835");
+        System.out.println("NAME : SURAJ KUMAR");
+        System.out.println("REGISTRATION NUMBER : 20BCE2835");
         System.out.println("---------------------------------------------------");
         crc_check obj = new crc_check();
         System.out.println("Enter the data to be received :");
-        String data = scan.next();
+        int val = scan.nextInt();
+        String data = "";
+        while(val > 0){
+            int d = val % 2;
+            if(d == 0)
+                data = data + '0';
+            else
+                data = data + '1';
+            val = val / 2;
+        }
+        System.out.println("Binary equivalent : " + data);
         obj.receiver(data);
     }
 }
