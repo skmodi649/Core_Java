@@ -24,7 +24,7 @@ public class LinkStateRouting {
             for (int j = 0; j < distance.length; j++) {
                 matrix[i][j] = sc.nextInt();
                 if (matrix[i][j] == 0)
-                    matrix[i][j] = 999;
+                    matrix[i][j] = 99999;
             }
         }
 
@@ -33,7 +33,7 @@ public class LinkStateRouting {
         distance[0] = 0;
 
         for (int counter = 0; counter < nodes; counter++) {
-            min = 999;
+            min = 99999;
             for (int i = 0; i < nodes; i++) {
                 if (min > distance[i] && visited[i] != 1) {
                     min = distance[i];
