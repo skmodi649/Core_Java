@@ -1,3 +1,5 @@
+// Program to show the concept of Link State Routing in Computer Networks
+
 import java.util.Scanner;
 public class LinkStateRouting {
     public static void main(String[] args) {
