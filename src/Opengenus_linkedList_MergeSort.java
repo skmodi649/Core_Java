@@ -102,6 +102,7 @@ public class Opengenus_linkedList_MergeSort {
         temp.next = new LinkedNode(90);
         temp = temp.next;
 
+        // Applying the Merge sort on the linked list created
         head = mergeSort(head);
         System.out.print("Sorted Linked List : ");
         printList(head);
