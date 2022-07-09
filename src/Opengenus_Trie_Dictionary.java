@@ -9,6 +9,7 @@ class TrieNode {
 
 public class Opengenus_Trie_Dictionary {
     private HashMap<Character,TrieNode> roots = new HashMap<Character,TrieNode>();
+    private static int n;
 
     /**
      * Search through the dictionary for a word.
@@ -37,6 +38,7 @@ public class Opengenus_Trie_Dictionary {
 
         insertWord(string.substring(1),roots.get(string.charAt(0)));
     }
+
 
     //Adds a new word to the trie tree.
     private void insertWord(String string, TrieNode node) {
@@ -77,7 +79,7 @@ public class Opengenus_Trie_Dictionary {
         Scanner sc = new Scanner(System.in);
         // Let's add some words in the dictionary
         System.out.println("Enter the number of words to be inserted in the dictionary: ");
-        int n = sc.nextInt();
+        n = sc.nextInt();
         System.out.println("Enter the words one by one: ");
         Opengenus_Trie_Dictionary obj = new Opengenus_Trie_Dictionary();
         for(int i = 1 ; i <= n ; i++){
