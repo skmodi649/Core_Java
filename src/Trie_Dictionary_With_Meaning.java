@@ -64,6 +64,8 @@ public class Trie_Dictionary_With_Meaning {
 
         Trie_Dictionary_With_Meaning obj = new Trie_Dictionary_With_Meaning();
 
+        Scanner sc = new Scanner(System.in);
+
         obj.insert(root, "Math", "A subject that deals in numbers");
         obj.insert(root, "map", "Diagrammatic representation of a particular area");
         obj.insert(root, "schedule", "A plan designed to execute a particular task");
