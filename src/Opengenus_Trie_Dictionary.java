@@ -29,32 +29,32 @@ public class Opengenus_Trie_Dictionary {
 
     /**
      * Insert a word into the dictionary.
-     * @param string The word to insert.
+     * @param word The word to insert.
      */
-    public void insert(String string) {
-        if (!roots.containsKey(string.charAt(0))) {
-            roots.put(string.charAt(0), new TrieNode());
+    public void insert(String word) {
+        if (!roots.containsKey(word.charAt(0))) {
+            roots.put(word.charAt(0), new TrieNode());
         }
 
-        insertWord(string.substring(1),roots.get(string.charAt(0)));
+        insertWord(word.substring(1),roots.get(word.charAt(0)));
     }
 
 
     //Adds a new word to the trie tree.
-    private void insertWord(String string, TrieNode node) {
+    private void insertWord(String word, TrieNode node) {
         final TrieNode nextChild;
-        if (node.children.containsKey(string.charAt(0))) {
-            nextChild = node.children.get(string.charAt(0));
+        if (node.children.containsKey(word.charAt(0))) {
+            nextChild = node.children.get(word.charAt(0));
         } else {
             nextChild = new TrieNode();
-            node.children.put(string.charAt(0), nextChild);
+            node.children.put(word.charAt(0), nextChild);
         }
 
-        if (string.length() == 1) {
+        if (word.length() == 1) {
             nextChild.endOfWord = true;
             return;
         } else {
-            insertWord(string.substring(1),nextChild);
+            insertWord(word.substring(1),nextChild);
         }
     }
 
