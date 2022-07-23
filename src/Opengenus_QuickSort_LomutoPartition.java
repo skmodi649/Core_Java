@@ -22,9 +22,10 @@ public class Opengenus_QuickSort_LomutoPartition {
             quick_sort(arr, pivot+1, h);
         }
     }
+
     public static void main(String[] args){
         int[] arr = {0, 5, 16, 10, 9, 8, 12};
-        Opengenus_QuickSort_LomutoPartition obj = new Opengenus_QuickSort_LomutoPartition();
+        Opengenus_QuickSort_NaivePartition obj = new Opengenus_QuickSort_NaivePartition();
         obj.quick_sort(arr, 0, 6);
         System.out.print("Sorted Array: ");
         for(int i = 0 ; i < arr.length ; i++)
