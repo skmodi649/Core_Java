@@ -8,7 +8,7 @@ public class pyramid {
         int n = sc.nextInt();
         for(int i = 1 ; i <= n ; i++) // outer loop for number of rows
         {
-            for(int j = n-i ; j >= 1 ; j--){ // inner loop for spaces
+            for(int j = 1 ; j <= (n-i) ; j++){ // inner loop for spaces
                 System.out.print(" ");
             }
             for(int j = 1 ; j <= i ; j++){
