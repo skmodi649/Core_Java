@@ -3,7 +3,6 @@
 package CAT2;
 
 import java.util.Scanner;
-37
 public class Armstrong_Number {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
