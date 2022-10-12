@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class InversionCount {
+public class inversionCount {
     static int inversionCount(int arr[]){
         int count_inversion=0;
         for(int i=0;i< arr.length-1;i++)
