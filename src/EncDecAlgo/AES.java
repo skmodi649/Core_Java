@@ -11,11 +11,11 @@ import java.security.NoSuchAlgorithmException;
 public class AES {
     public static void main(String[] args) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         FileInputStream fis = new FileInputStream(new File("C:\\Users\\Surmo\\Downloads\\Enc1.mp4"));
-        File outfile = new File("C:\\Users\\Surmo\\Downloads\\Enc1.mp4");
+        File outfile = new File("C:\\Users\\Surmo\\Downloads\\Enc3.mp4");
         int read;
         if (!outfile.exists())
             outfile.createNewFile();
-        File decfile = new File("C:\\Users\\Surmo\\Downloads\\Enc1.mp4");
+        File decfile = new File("C:\\Users\\Surmo\\Downloads\\Enc4.mp4");
         if (!decfile.exists())
             decfile.createNewFile();
         FileOutputStream fos = new FileOutputStream(outfile);
